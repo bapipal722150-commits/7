@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bankura University - 3rd Semester Exam Routine 2026 (Desktop Version)</title>
+<link href="https://fonts.googleapis.com/css2?family=Garamond&family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<style>
+    :root {
+        --primary-blue: #1e3a8a;
+        --secondary-blue: #1e40af;
+        --accent-blue: #22d3ee;
+        --light-bg: #f8fafc;
+        --dark-text: #111;
+        --warning: #f59e0b;
+        --success: #10b981;
+        --danger: #ef4444;
+        --card-bg: #ffffff;
+        --shadow: rgba(0,0,0,0.08);
+        --hover-shadow: rgba(0,0,0,0.15);
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+        color: var(--dark-text);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        position: relative;
+    }
+
+    /* Desktop-specific background pattern */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            radial-gradient(circle at 10% 20%, rgba(30, 58, 138, 0.03) 0%, transparent 20%),
+            radial-gradient(circle at 90% 80%, rgba(30, 64, 175, 0.03) 0%, transparent 20%);
+        z-index: -1;
+    }
+    
+    /* Container for desktop layout */
+    .desktop-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 30px;
+        align-items: start;
+    }
+    
+    /* Header & Navigation */
+    header {
+        text-align: center;
+        padding: 25px 30px;
+        background: linear-gradient(135deg, var(--primary-blue) 0%, #1d4ed8 100%);
+        color: white;
+        box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+        border-radius: 20px;
+        margin-bottom: 30px;
+        grid-column: 1 / -1;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        transform: translate(40%, -40%);
+    }
+    
+    h1 {
+        font-family: 'Garamond', serif;
+        font-size: 42px;
+        margin: 10px 0;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+    
+    h2 {
+        font-size: 24px;
+        font-weight: 500;
+        margin: 5px 0;
+        opacity: 0.9;
+    }
+    
+    .utility-bar {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 25px;
+        padding: 0 20px;
+    }
+    
+    .utility-btn {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        padding: 12px 24px;
+        font-size: 1rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-decoration: none;
+        font-weight: 500;
+        backdrop-filter: blur(10px);
+    }
+    
+    .utility-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .utility-btn i {
+        font-size: 1.1rem;
+    }
+    
+    .print-btn {
+        background: rgba(255, 255, 255, 0.25);
+    }
+    
+    /* Left Sidebar for Desktop */
+    .desktop-sidebar {
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px var(--shadow);
+        position: sticky;
+        top: 30px;
+        height: fit-content;
+    }
+    
+    .sidebar-section {
+        margin-bottom: 35px;
+    }
+    
+    .sidebar-section h3 {
+        font-size: 1.3rem;
+        color: var(--primary-blue);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .sidebar-section h3 i {
+        color: var(--secondary-blue);
+    }
+    
+    /* Notes Section */
+    .note {
+        padding: 20px;
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border-left: 6px solid var(--warning);
+        font-size: 1rem;
+        font-weight: 500;
+        color: #78350f;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
+        margin-bottom: 25px;
+    }
+    
+    .note h3 {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .note-list {
+        list-style: none;
+    }
+    
+    .note-list li {
+        margin-bottom: 10px;
+        padding-left: 10px;
+        position: relative;
+    }
+    
+    .note-list li:before {
+        content: "•";
+        color: var(--warning);
+        font-weight: bold;
+        position: absolute;
+        left: -5px;
+    }
+    
+    /* Quick Links for Desktop */
+    .links-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .link-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 18px;
+        background: #f8fafc;
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--secondary-blue);
+        font-weight: 500;
+        transition: all 0.25s ease;
+        border: 1px solid #e2e8f0;
+    }
+    
+    .link-item:hover {
+        background: #e0f2fe;
+        border-color: var(--accent-blue);
+        transform: translateX(8px);
+        box-shadow: 0 5px 15px rgba(34, 211, 238, 0.1);
+    }
+    
+    .link-item i {
+        font-size: 1.2rem;
+        width: 24px;
+        text-align: center;
+    }
+    
+    /* Main Content Area */
+    .desktop-main {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    /* Exam Schedule Table */
+    .table-container {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        background: var(--card-bg);
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        background-color: var(--card-bg);
+    }
+    
+    caption {
+        font-size: 1.8rem;
+        font-weight: 700;
+        padding: 25px;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: white;
+        text-align: center;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    thead {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    
+    th {
+        background: linear-gradient(135deg, var(--secondary-blue) 0%, #1e3a8a 100%);
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 22px 20px;
+        font-size: 1.05rem;
+        letter-spacing: 0.5px;
+        position: relative;
+    }
+    
+    th:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 20%;
+        height: 60%;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.3);
+    }
+    
+    td {
+        padding: 20px;
+        text-align: center;
+        font-weight: 500;
+        border-bottom: 1px solid #f1f5f9;
+        transition: all 0.2s ease;
+    }
+    
+    tbody tr {
+        transition: all 0.25s ease;
+    }
+    
+    tbody tr:nth-child(even) {
+        background-color: #f8fafc;
+    }
+    
+    tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+    
+    tbody tr:hover {
+        background-color: #e0f2fe;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(34, 211, 238, 0.2);
+    }
+    
+    /* Countdown Cells - Updated for detailed countdown */
+    .countdown-cell {
+        font-weight: 700;
+        min-width: 180px;
+    }
+    
+    .countdown-timer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 12px;
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        transition: all 0.3s ease;
+    }
+    
+    .countdown-timer.urgent {
+        background: #fee2e2;
+        border-color: #fca5a5;
+        animation: pulse 1.5s infinite;
+    }
+    
+    .countdown-timer.completed {
+        background: #d1fae5;
+        border-color: #86efac;
+    }
+    
+    .countdown-days {
+        font-size: 1.8rem;
+        color: var(--primary-blue);
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+    
+    .countdown-hours {
+        font-size: 1.2rem;
+        color: #6b7280;
+        font-weight: 600;
+    }
+    
+    .countdown-detail {
+        font-size: 0.9rem;
+        color: #6b7280;
+        margin-top: 5px;
+        font-weight: normal;
+        line-height: 1.4;
+    }
+    
+    .countdown-label {
+        font-size: 0.85rem;
+        color: #6b7280;
+        display: block;
+        font-weight: normal;
+        margin-top: 5px;
+    }
+    
+    .urgent-text {
+        color: #dc2626;
+        font-weight: 700;
+    }
+    
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+        100% { transform: scale(1); }
+    }
+    
+    /* Calendar Button */
+    .calendar-btn {
+        background: linear-gradient(135deg, #10b981 0%, #0da271 100%);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+    }
+    
+    .calendar-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+    }
+    
+    /* Interactive Features for Desktop */
+    .interactive-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 10px;
+    }
+    
+    .interactive-card {
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px var(--shadow);
+        transition: all 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .interactive-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px var(--hover-shadow);
+    }
+    
+    .interactive-card h3 {
+        margin-bottom: 25px;
+        color: var(--primary-blue);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 1.4rem;
+    }
+    
+    .priority-select {
+        width: 100%;
+        padding: 14px 18px;
+        border-radius: 12px;
+        border: 2px solid #d1d5db;
+        margin-bottom: 18px;
+        font-size: 1.05rem;
+        background: white;
+        cursor: pointer;
+        transition: border-color 0.3s;
+    }
+    
+    .priority-select:focus {
+        outline: none;
+        border-color: var(--accent-blue);
+        box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
+    }
+    
+    .priority-high { 
+        background-color: #fee2e2; 
+        border-color: #fca5a5;
+    }
+    
+    .priority-medium { 
+        background-color: #fef3c7; 
+        border-color: #fcd34d;
+    }
+    
+    .priority-low { 
+        background-color: #d1fae5; 
+        border-color: #86efac;
+    }
+    
+    .notes-area {
+        width: 100%;
+        height: 180px;
+        padding: 18px;
+        border-radius: 12px;
+        border: 2px solid #d1d5db;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        resize: vertical;
+        margin-bottom: 20px;
+        transition: border-color 0.3s;
+        flex-grow: 1;
+    }
+    
+    .notes-area:focus {
+        outline: none;
+        border-color: var(--accent-blue);
+        box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
+    }
+    
+    .save-btn {
+        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 16px 24px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-top: auto;
+    }
+    
+    .save-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+    }
+    
+    .stats-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+        text-align: center;
+    }
+    
+    .stat {
+        padding: 15px;
+        flex: 1;
+    }
+    
+    .stat-value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-blue);
+        line-height: 1;
+    }
+    
+    .stat-label {
+        font-size: 1rem;
+        color: #6b7280;
+        margin-top: 8px;
+    }
+    
+    /* Progress Bar */
+    .progress-container {
+        margin-top: 25px;
+    }
+    
+    .progress-label {
+        font-size: 1rem;
+        color: #6b7280;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .progress-bar {
+        background: #e5e7eb;
+        height: 12px;
+        border-radius: 6px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    
+    .progress-fill {
+        background: linear-gradient(90deg, #10b981, #34d399);
+        height: 100%;
+        width: 0%;
+        transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        border-radius: 6px;
+    }
+    
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 30px;
+        background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
+        font-size: 1.1rem;
+        color: var(--dark-text);
+        border-radius: 20px;
+        margin-top: 40px;
+        grid-column: 1 / -1;
+        box-shadow: 0 8px 25px rgba(147, 197, 253, 0.3);
+    }
+    
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 20px;
+    }
+    
+    .footer-links a {
+        color: #1e3a8a;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 50px;
+        transition: all 0.3s;
+    }
+    
+    .footer-links a:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-3px);
+    }
+    
+    /* Hide mobile controls on desktop */
+    .mobile-controls {
+        display: none;
+    }
+    
+    /* Responsive Design for smaller screens */
+    @media (max-width: 1200px) {
+        .desktop-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .desktop-sidebar {
+            position: static;
+            margin-bottom: 20px;
+        }
+        
+        .interactive-section {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 900px) {
+        body {
+            padding: 15px;
+        }
+        
+        .interactive-section {
+            grid-template-columns: 1fr;
+        }
+        
+        h1 {
+            font-size: 36px;
+        }
+        
+        .utility-bar {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .utility-btn {
+            width: 100%;
+            max-width: 300px;
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .desktop-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .desktop-sidebar {
+            display: none;
+        }
+        
+        .mobile-controls {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+        
+        .mobile-btn {
+            flex: 1;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        table {
+            min-width: 800px;
+        }
+    }
+    
+    /* Print Styles */
+    @media print {
+        body { 
+            background-color: white !important; 
+            padding: 0;
+        }
+        
+        body::before {
+            display: none;
+        }
+        
+        .utility-bar, .desktop-sidebar, .interactive-section, footer, .calendar-btn {
+            display: none !important;
+        }
+        
+        table { 
+            box-shadow: none; 
+            width: 100%;
+        }
+        
+        .table-container {
+            overflow-x: visible;
+            box-shadow: none;
+            border-radius: 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+        }
+        
+        header {
+            border-radius: 0;
+            box-shadow: none;
+        }
+        
+        .desktop-container {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+        
+        .desktop-main {
+            gap: 0;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Bankura University</h1>
+    <h2>3rd Semester Examination Routine (2026)</h2>
+    
+    <div class="utility-bar">
+        <button class="utility-btn print-btn" id="printBtn">
+            <i class="fas fa-print"></i> Print Schedule
+        </button>
+        <a href="https://bankurauniv.ac.in" target="_blank" class="utility-btn">
+            <i class="fas fa-globe"></i> Official Website
+        </a>
+        <a href="https://bankurauniv.ac.in/exam" target="_blank" class="utility-btn">
+            <i class="fas fa-file-alt"></i> Exam Portal
+        </a>
+        <button class="utility-btn" id="exportAllBtn">
+            <i class="fas fa-calendar-plus"></i> Export All to Calendar
+        </button>
+        <button class="utility-btn" id="shareBtn">
+            <i class="fas fa-share-alt"></i> Share Schedule
+        </button>
+    </div>
+</header>
+
+<div class="desktop-container">
+    <!-- Desktop Sidebar -->
+    <aside class="desktop-sidebar">
+        <div class="sidebar-section">
+            <div class="note">
+                <h3><i class="fas fa-exclamation-circle"></i> Important Notes</h3>
+                <ul class="note-list">
+                    <li>All Bengali, History, and Science subjects will be conducted in the 2nd half of the day.</li>
+                    <li>All other Arts subjects (except Bengali and History) will be conducted in the 1st half.</li>
+                    <li>Report to the exam center 30 minutes before the scheduled time.</li>
+                    <li>Carry your University ID Card and Admit Card to the exam hall.</li>
+                    <li>Electronic devices are strictly prohibited in examination halls.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="sidebar-section">
+            <h3><i class="fas fa-link"></i> Quick University Links</h3>
+            <div class="links-grid">
+                <a href="https://bankurauniv.ac.in" target="_blank" class="link-item">
+                    <i class="fas fa-university"></i> Main Website
+                </a>
+                <a href="https://bankurauniv.ac.in/exam/results" target="_blank" class="link-item">
+                    <i class="fas fa-poll"></i> Results Portal
+                </a>
+                <a href="https://bankurauniv.ac.in/exam/notifications" target="_blank" class="link-item">
+                    <i class="fas fa-bullhorn"></i> Notifications
+                </a>
+                <a href="https://bankurauniv.ac.in/contact" target="_blank" class="link-item">
+                    <i class="fas fa-phone-alt"></i> Contact Directory
+                </a>
+                <a href="https://bankurauniv.ac.in/exam/previous-papers" target="_blank" class="link-item">
+                    <i class="fas fa-file-archive"></i> Previous Papers
+                </a>
+                <a href="https://bankurauniv.ac.in/exam/syllabus" target="_blank" class="link-item">
+                    <i class="fas fa-book"></i> Syllabus
+                </a>
+                <a href="https://bankurauniv.ac.in/exam/helpline" target="_blank" class="link-item">
+                    <i class="fas fa-headset"></i> Exam Helpline
+                </a>
+                <a href="https://bankurauniv.ac.in/exam/forms" target="_blank" class="link-item">
+                    <i class="fas fa-file-download"></i> Download Forms
+                </a>
+            </div>
+        </div>
+        
+        <div class="sidebar-section">
+            <h3><i class="fas fa-clock"></i> Upcoming Deadlines</h3>
+            <div class="deadline-item">
+                <div class="deadline-title">Admit Card Download</div>
+                <div class="deadline-date">10 Jan 2026</div>
+            </div>
+            <div class="deadline-item">
+                <div class="deadline-title">Exam Fee Submission</div>
+                <div class="deadline-date">05 Jan 2026</div>
+            </div>
+            <div class="deadline-item">
+                <div class="deadline-title">Practical Exam Schedule</div>
+                <div class="deadline-date">15 Jan 2026</div>
+            </div>
+        </div>
+    </aside>
+    
+    <!-- Main Content Area -->
+    <main class="desktop-main">
+        <!-- Mobile Controls (Hidden on Desktop) -->
+        <div class="mobile-controls">
+            <button class="mobile-btn" id="mobilePrintBtn">
+                <i class="fas fa-print"></i> Print
+            </button>
+            <button class="mobile-btn" id="mobileCalendarBtn">
+                <i class="fas fa-calendar"></i> Add to Calendar
+            </button>
+            <button class="mobile-btn" id="mobileWebsiteBtn">
+                <i class="fas fa-external-link-alt"></i> University Site
+            </button>
+        </div>
+        
+        <!-- Exam Schedule Table -->
+        <div class="table-container">
+            <table>
+                <caption>Exam Schedule with Live Countdown</caption>
+                <thead>
+                    <tr>
+                        <th>Subject & Paper Code</th>
+                        <th>Date</th>
+                        <th>Day</th>
+                        <th>Session</th>
+                        <th>Countdown</th>
+                        <th>Add to Calendar</th>
+                    </tr>
+                </thead>
+                <tbody id="examTable">
+                    <!-- Exam data will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Interactive Features Section -->
+        <div class="interactive-section">
+            <div class="interactive-card">
+                <h3><i class="fas fa-tasks"></i> Set Study Priority</h3>
+                <p>Mark priority for each subject to help with study planning:</p>
+                
+                <div id="priorityControls">
+                    <!-- Priority selectors will be added by JavaScript -->
+                </div>
+                
+                <button class="save-btn" id="savePrioritiesBtn">
+                    <i class="fas fa-save"></i> Save All Priorities
+                </button>
+            </div>
+            
+            <div class="interactive-card">
+                <h3><i class="fas fa-sticky-note"></i> Personal Study Notes</h3>
+                <p>Add your own notes for each subject:</p>
+                
+                <select id="noteSubjectSelect" class="priority-select">
+                    <option value="">Select a subject...</option>
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+                
+                <textarea id="studyNotes" class="notes-area" placeholder="Enter your study notes, important formulas, key points, or reminders here..."></textarea>
+                
+                <button class="save-btn" id="saveNotesBtn">
+                    <i class="fas fa-save"></i> Save Notes
+                </button>
+            </div>
+            
+            <div class="interactive-card">
+                <h3><i class="fas fa-chart-bar"></i> Exam Statistics</h3>
+                <div class="stats-container">
+                    <div class="stat">
+                        <div class="stat-value" id="totalExams">6</div>
+                        <div class="stat-label">Total Exams</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="daysRemaining">-</div>
+                        <div class="stat-label">Days to First Exam</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="examsCompleted">0</div>
+                        <div class="stat-label">Exams Completed</div>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Overall Progress</span>
+                        <span id="progressText">0% complete</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer>
+    <p>For any updates, visit the official Bankura University website: 
+        <a href="https://bankurauniv.ac.in" target="_blank">bankurauniv.ac.in</a>
+    </p>
+    <div class="footer-links">
+        <a href="https://bankurauniv.ac.in/exam/guidelines" target="_blank">Exam Guidelines</a>
+        <a href="https://bankurauniv.ac.in/exam/faq" target="_blank">FAQ</a>
+        <a href="https://bankurauniv.ac.in/exam/forms" target="_blank">Download Forms</a>
+        <a href="https://bankurauniv.ac.in/exam/helpline" target="_blank">Helpline</a>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script>
+// Exam data with additional details
+const examData = [
+    { 
+        subject: "Major 3", 
+        date: "2026-01-21", 
+        day: "Wednesday", 
+        session: "1ST Half",
+        paperCode: "BU-MAJ3-2026",
+        time: "9:00 AM - 12:00 PM"
+    },
+    { 
+        subject: "Major 4", 
+        date: "2026-01-28", 
+        day: "Wednesday", 
+        session: "1ST Half",
+        paperCode: "BU-MAJ4-2026",
+        time: "9:00 AM - 12:00 PM"
+    },
+    { 
+        subject: "Minor 3 (Bengali)", 
+        date: "2026-01-30", 
+        day: "Friday", 
+        session: "2ND Half",
+        paperCode: "BU-MIN3-BEN-2026",
+        time: "2:00 PM - 5:00 PM"
+    },
+    { 
+        subject: "MD 3", 
+        date: "2026-02-02", 
+        day: "Monday", 
+        session: "1ST Half",
+        paperCode: "BU-MD3-2026",
+        time: "9:00 AM - 12:00 PM"
+    },
+    { 
+        subject: "SEC 3", 
+        date: "2026-02-05", 
+        day: "Thursday", 
+        session: "1ST Half",
+        paperCode: "BU-SEC3-2026",
+        time: "9:00 AM - 12:00 PM"
+    },
+    { 
+        subject: "AEC 3 (Bengali)", 
+        date: "2026-02-07", 
+        day: "Saturday", 
+        session: "2ND Half",
+        paperCode: "BU-AEC3-BEN-2026",
+        time: "2:00 PM - 5:00 PM"
+    }
+];
+
+// Store countdown intervals
+let countdownIntervals = [];
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', function() {
+    populateExamTable();
+    setupInteractiveFeatures();
+    setupEventListeners();
+    updateStatistics();
+    startAllCountdowns();
+    
+    // Add deadline items styling
+    styleDeadlineItems();
+});
+
+// Populate the exam table with data
+function populateExamTable() {
+    const tableBody = document.getElementById('examTable');
+    const noteSelect = document.getElementById('noteSubjectSelect');
+    const priorityControls = document.getElementById('priorityControls');
+    
+    tableBody.innerHTML = '';
+    noteSelect.innerHTML = '<option value="">Select a subject...</option>';
+    priorityControls.innerHTML = '';
+    
+    examData.forEach((exam, index) => {
+        // Create table row
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>
+                <strong>${exam.subject}</strong><br>
+                <small>${exam.paperCode}</small><br>
+                <small style="color: #6b7280; font-weight: normal;">${exam.time}</small>
+            </td>
+            <td>
+                <strong>${formatDate(exam.date)}</strong>
+            </td>
+            <td>${exam.day}</td>
+            <td>
+                <span class="session-badge ${exam.session === '1ST Half' ? 'session-first' : 'session-second'}">
+                    ${exam.session}
+                </span>
+            </td>
+            <td class="countdown-cell">
+                <div id="countdown-${index}" class="countdown-timer">
+                    <!-- Countdown will be populated by JavaScript -->
+                </div>
+            </td>
+            <td>
+                <button class="calendar-btn" data-index="${index}">
+                    <i class="fas fa-calendar-plus"></i> Add to Calendar
+                </button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+        
+        // Add session badge styling
+        const sessionBadge = row.querySelector('.session-badge');
+        if (sessionBadge) {
+            if (exam.session === '1ST Half') {
+                sessionBadge.style.background = 'linear-gradient(135deg, #3b82f6, #1d4ed8)';
+                sessionBadge.style.color = 'white';
+                sessionBadge.style.padding = '8px 15px';
+                sessionBadge.style.borderRadius = '20px';
+                sessionBadge.style.fontWeight = '600';
+                sessionBadge.style.display = 'inline-block';
+            } else {
+                sessionBadge.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
+                sessionBadge.style.color = 'white';
+                sessionBadge.style.padding = '8px 15px';
+                sessionBadge.style.borderRadius = '20px';
+                sessionBadge.style.fontWeight = '600';
+                sessionBadge.style.display = 'inline-block';
+            }
+        }
+        
+        // Add option to note select
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = `${exam.subject} (${exam.paperCode})`;
+        noteSelect.appendChild(option);
+        
+        // Add priority control
+        const priorityDiv = document.createElement('div');
+        priorityDiv.style.marginBottom = '15px';
+        priorityDiv.innerHTML = `
+            <label for="priority-${index}" style="display: block; margin-bottom: 5px; font-weight: 500;">${exam.subject}:</label>
+            <select id="priority-${index}" class="priority-select" data-index="${index}">
+                <option value="">Select Priority</option>
+                <option value="high">High Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="low">Low Priority</option>
+            </select>
+        `;
+        priorityControls.appendChild(priorityDiv);
+        
+        // Load saved priority
+        const savedPriority = localStorage.getItem(`priority-${index}`);
+        if (savedPriority) {
+            document.getElementById(`priority-${index}`).value = savedPriority;
+            updateRowPriority(row, savedPriority);
+        }
+        
+        // Load saved notes
+        const savedNote = localStorage.getItem(`note-${index}`);
+        if (savedNote && index === 0) {
+            document.getElementById('studyNotes').value = savedNote;
+        }
+    });
+}
+
+// Format date from YYYY-MM-DD to DD.MM.YYYY
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
+}
+
+// Start all countdown timers
+function startAllCountdowns() {
+    // Clear any existing intervals
+    countdownIntervals.forEach(interval => clearInterval(interval));
+    countdownIntervals = [];
+    
+    examData.forEach((exam, index) => {
+        // Start countdown for each exam
+        updateCountdown(index);
+        
+        // Set interval to update countdown every second
+        const interval = setInterval(() => updateCountdown(index), 1000);
+        countdownIntervals.push(interval);
+    });
+}
+
+// Update countdown for a specific exam
+function updateCountdown(index) {
+    const exam = examData[index];
+    const countdownElement = document.getElementById(`countdown-${index}`);
+    
+    if (!countdownElement) return;
+    
+    const now = new Date();
+    const examDate = new Date(exam.date);
+    
+    // Set exam time based on session
+    if (exam.session === "1ST Half") {
+        examDate.setHours(9, 0, 0, 0); // 9:00 AM
+    } else {
+        examDate.setHours(14, 0, 0, 0); // 2:00 PM
+    }
+    
+    const timeDiff = examDate.getTime() - now.getTime();
+    
+    if (timeDiff <= 0) {
+        // Exam has passed
+        countdownElement.innerHTML = `
+            <div class="countdown-days">✓</div>
+            <div class="countdown-label">Exam Completed</div>
+        `;
+        countdownElement.classList.add('completed');
+        countdownElement.classList.remove('urgent');
+        return;
+    }
+    
+    // Calculate days, hours, minutes, seconds
+    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+    
+    // Update UI
+    let countdownHTML = '';
+    
+    if (days > 0) {
+        countdownHTML = `
+            <div class="countdown-days">${days}</div>
+            <div class="countdown-hours">${hours}h ${minutes}m ${seconds}s</div>
+            <div class="countdown-label">${days} day${days !== 1 ? 's' : ''} remaining</div>
+        `;
+    } else if (hours > 0) {
+        countdownHTML = `
+            <div class="countdown-days urgent-text">${hours}</div>
+            <div class="countdown-hours">${minutes}m ${seconds}s</div>
+            <div class="countdown-label">${hours} hour${hours !== 1 ? 's' : ''} remaining</div>
+        `;
+    } else if (minutes > 0) {
+        countdownHTML = `
+            <div class="countdown-days urgent-text">${minutes}</div>
+            <div class="countdown-hours">${seconds}s</div>
+            <div class="countdown-label">${minutes} minute${minutes !== 1 ? 's' : ''} remaining</div>
+        `;
+    } else {
+        countdownHTML = `
+            <div class="countdown-days urgent-text">${seconds}</div>
+            <div class="countdown-label">${seconds} second${seconds !== 1 ? 's' : ''} remaining</div>
+        `;
+    }
+    
+    countdownElement.innerHTML = countdownHTML;
+    
+    // Update urgency styling
+    if (days <= 7) {
+        countdownElement.classList.add('urgent');
+    } else {
+        countdownElement.classList.remove('urgent');
+    }
+    
+    if (days <= 0) {
+        countdownElement.classList.add('urgent');
+    }
+    
+    // Update statistics if this is the first upcoming exam
+    if (index === getNextExamIndex()) {
+        updateStatistics();
+    }
+}
+
+// Get the index of the next upcoming exam
+function getNextExamIndex() {
+    const now = new Date();
+    let nextExamIndex = -1;
+    let smallestDiff = Infinity;
+    
+    examData.forEach((exam, index) => {
+        const examDate = new Date(exam.date);
+        
+        // Set exam time based on session
+        if (exam.session === "1ST Half") {
+            examDate.setHours(9, 0, 0, 0);
+        } else {
+            examDate.setHours(14, 0, 0, 0);
+        }
+        
+        const timeDiff = examDate.getTime() - now.getTime();
+        
+        if (timeDiff > 0 && timeDiff < smallestDiff) {
+            smallestDiff = timeDiff;
+            nextExamIndex = index;
+        }
+    });
+    
+    return nextExamIndex;
+}
+
+// Update statistics
+function updateStatistics() {
+    const now = new Date();
+    let upcomingExams = 0;
+    let completedExams = 0;
+    let closestExamTime = Infinity;
+    
+    examData.forEach(exam => {
+        const examDate = new Date(exam.date);
+        
+        // Set exam time based on session
+        if (exam.session === "1ST Half") {
+            examDate.setHours(9, 0, 0, 0);
+        } else {
+            examDate.setHours(14, 0, 0, 0);
+        }
+        
+        const timeDiff = examDate.getTime() - now.getTime();
+        
+        if (timeDiff > 0) {
+            upcomingExams++;
+            if (timeDiff < closestExamTime) {
+                closestExamTime = timeDiff;
+            }
+        } else if (timeDiff < 0) {
+            completedExams++;
+        }
+    });
+    
+    document.getElementById('examsCompleted').textContent = completedExams;
+    
+    // Calculate days to first exam
+    if (closestExamTime !== Infinity) {
+        const daysToFirstExam = Math.ceil(closestExamTime / (1000 * 60 * 60 * 24));
+        document.getElementById('daysRemaining').textContent = daysToFirstExam;
+    } else {
+        document.getElementById('daysRemaining').textContent = '-';
+    }
+    
+    // Update progress bar
+    const totalExams = examData.length;
+    const progress = Math.round((completedExams / totalExams) * 100);
+    document.getElementById('progressBar').style.width = `${progress}%`;
+    document.getElementById('progressText').textContent = `${progress}% complete`;
+}
+
+// Setup interactive features
+function setupInteractiveFeatures() {
+    // Priority change handlers
+    examData.forEach((exam, index) => {
+        const select = document.getElementById(`priority-${index}`);
+        if (select) {
+            select.addEventListener('change', function() {
+                const priority = this.value;
+                localStorage.setItem(`priority-${index}`, priority);
+                
+                // Find the corresponding table row and update its appearance
+                const rows = document.querySelectorAll('#examTable tr');
+                if (rows[index]) {
+                    updateRowPriority(rows[index], priority);
+                }
+                
+                showToast(`Priority set for ${exam.subject}`, 'success');
+            });
+        }
+    });
+    
+    // Note subject select change handler
+    document.getElementById('noteSubjectSelect').addEventListener('change', function() {
+        const index = this.value;
+        if (index !== "") {
+            const savedNote = localStorage.getItem(`note-${index}`);
+            document.getElementById('studyNotes').value = savedNote || '';
+        }
+    });
+    
+    // Save notes button
+    document.getElementById('saveNotesBtn').addEventListener('click', function() {
+        const subjectIndex = document.getElementById('noteSubjectSelect').value;
+        const notes = document.getElementById('studyNotes').value;
+        
+        if (subjectIndex === "") {
+            showToast('Please select a subject first', 'warning');
+            return;
+        }
+        
+        localStorage.setItem(`note-${subjectIndex}`, notes);
+        showToast(`Notes saved for ${examData[subjectIndex].subject}`, 'success');
+    });
+}
+
+// Update row appearance based on priority
+function updateRowPriority(row, priority) {
+    // Remove existing priority classes
+    row.classList.remove('priority-high', 'priority-medium', 'priority-low');
+    
+    // Add new priority class
+    if (priority === 'high') {
+        row.classList.add('priority-high');
+    } else if (priority === 'medium') {
+        row.classList.add('priority-medium');
+    } else if (priority === 'low') {
+        row.classList.add('priority-low');
+    }
+}
+
+// Style deadline items
+function styleDeadlineItems() {
+    const deadlineItems = document.querySelectorAll('.deadline-item');
+    deadlineItems.forEach(item => {
+        item.style.display = 'flex';
+        item.style.justifyContent = 'space-between';
+        item.style.alignItems = 'center';
+        item.style.padding = '12px 15px';
+        item.style.marginBottom = '10px';
+        item.style.background = '#f8fafc';
+        item.style.borderRadius = '10px';
+        item.style.border = '1px solid #e2e8f0';
+        
+        const title = item.querySelector('.deadline-title');
+        const date = item.querySelector('.deadline-date');
+        
+        if (title) title.style.fontWeight = '600';
+        if (date) {
+            date.style.fontWeight = '500';
+            date.style.color = '#1e40af';
+            date.style.background = '#dbeafe';
+            date.style.padding = '5px 10px';
+            date.style.borderRadius = '6px';
+        }
+    });
+}
+
+// Setup event listeners for buttons
+function setupEventListeners() {
+    // Print buttons
+    document.getElementById('printBtn').addEventListener('click', printSchedule);
+    document.getElementById('mobilePrintBtn').addEventListener('click', printSchedule);
+    
+    // Calendar buttons
+    document.getElementById('exportAllBtn').addEventListener('click', exportAllToCalendar);
+    document.getElementById('mobileCalendarBtn').addEventListener('click', exportAllToCalendar);
+    
+    // University website buttons
+    document.getElementById('mobileWebsiteBtn').addEventListener('click', function() {
+        window.open('https://bankurauniv.ac.in', '_blank');
+    });
+    
+    // Share button
+    document.getElementById('shareBtn').addEventListener('click', shareSchedule);
+    
+    // Individual calendar buttons (added dynamically)
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.calendar-btn')) {
+            const button = e.target.closest('.calendar-btn');
+            const index = button.getAttribute('data-index');
+            addToCalendar(index);
+        }
+    });
+    
+    // Save priorities button
+    document.getElementById('savePrioritiesBtn').addEventListener('click', function() {
+        let prioritiesSet = 0;
+        examData.forEach((exam, index) => {
+            const select = document.getElementById(`priority-${index}`);
+            if (select && select.value) {
+                prioritiesSet++;
+            }
+        });
+        
+        showToast(`${prioritiesSet} priority setting${prioritiesSet !== 1 ? 's' : ''} saved`, 'success');
+    });
+}
+
+// Print schedule function
+function printSchedule() {
+    // Pause countdown updates during print
+    countdownIntervals.forEach(interval => clearInterval(interval));
+    window.print();
+    // Restart countdowns after print
+    startAllCountdowns();
+}
+
+// Add single exam to calendar
+function addToCalendar(index) {
+    const exam = examData[index];
+    const examDate = new Date(exam.date);
+    
+    // Format date for calendar (YYYYMMDD)
+    const year = examDate.getFullYear();
+    const month = (examDate.getMonth() + 1).toString().padStart(2, '0');
+    const day = examDate.getDate().toString().padStart(2, '0');
+    
+    // Create .ics file content
+    const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Bankura University//Exam Schedule//EN
+BEGIN:VEVENT
+SUMMARY:${exam.subject} - Bankura University Exam
+DESCRIPTION:${exam.subject} (${exam.paperCode}) - ${exam.session}\\nTime: ${exam.time}
+DTSTART:${year}${month}${day}T${exam.session === '1ST Half' ? '090000' : '140000'}
+DTEND:${year}${month}${day}T${exam.session === '1ST Half' ? '120000' : '170000'}
+LOCATION:Bankura University
+UID:${exam.paperCode}-${year}${month}${day}
+END:VEVENT
+END:VCALENDAR`;
+    
+    // Create download link
+    const blob = new Blob([icsContent], { type: 'text/calendar' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Bankura_Exam_${exam.subject.replace(/\s+/g, '_')}.ics`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    showToast(`${exam.subject} added to calendar`, 'success');
+}
+
+// Export all exams to calendar
+function exportAllToCalendar() {
+    let icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Bankura University//Exam Schedule//EN`;
+    
+    examData.forEach(exam => {
+        const examDate = new Date(exam.date);
+        const year = examDate.getFullYear();
+        const month = (examDate.getMonth() + 1).toString().padStart(2, '0');
+        const day = examDate.getDate().toString().padStart(2, '0');
+        
+        icsContent += `
+BEGIN:VEVENT
+SUMMARY:${exam.subject} - Bankura University Exam
+DESCRIPTION:${exam.subject} (${exam.paperCode}) - ${exam.session}\\nTime: ${exam.time}
+DTSTART:${year}${month}${day}T${exam.session === '1ST Half' ? '090000' : '140000'}
+DTEND:${year}${month}${day}T${exam.session === '1ST Half' ? '120000' : '170000'}
+LOCATION:Bankura University
+UID:${exam.paperCode}-${year}${month}${day}
+END:VEVENT`;
+    });
+    
+    icsContent += `
+END:VCALENDAR`;
+    
+    // Create download link
+    const blob = new Blob([icsContent], { type: 'text/calendar' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Bankura_University_All_Exams.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    showToast('All exams exported to calendar', 'success');
+}
+
+// Share schedule function
+function shareSchedule() {
+    const shareText = `Bankura University 3rd Semester Exam Schedule 2026:\n\n`;
+    let scheduleText = '';
+    
+    examData.forEach(exam => {
+        scheduleText += `📚 ${exam.subject} (${exam.paperCode})\n📅 ${formatDate(exam.date)} (${exam.day})\n⏰ ${exam.session} (${exam.time})\n\n`;
+    });
+    
+    const fullText = shareText + scheduleText + `\nView full schedule: ${window.location.href}`;
+    
+    if (navigator.share) {
+        navigator.share({
+            title: 'Bankura University Exam Schedule',
+            text: fullText,
+            url: window.location.href
+        });
+    } else {
+        // Fallback: Copy to clipboard
+        navigator.clipboard.writeText(fullText).then(() => {
+            showToast('Schedule copied to clipboard!', 'success');
+        });
+    }
+}
+
+// Toast notification function
+function showToast(message, type = 'info') {
+    const backgroundColor = type === 'success' ? '#10b981' : 
+                           type === 'warning' ? '#f59e0b' : 
+                           type === 'error' ? '#ef4444' : '#3b82f6';
+    
+    Toastify({
+        text: message,
+        duration: 4000,
+        gravity: "top",
+        position: "right",
+        backgroundColor: backgroundColor,
+        stopOnFocus: true,
+        style: {
+            borderRadius: "10px",
+            fontWeight: "600",
+            padding: "15px 20px",
+            boxShadow: "0 5px 15px rgba(0,0,0,0.2)"
+        }
+    }).showToast();
+}
+</script>
+</body>
+</html>
